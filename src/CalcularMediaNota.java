@@ -2,21 +2,39 @@ import java.util.Scanner;
 
 public class CalcularMediaNota {
     public static void main(String[] args) {
-        System.out.println("Digite a nota do aluno: ");
-
         Scanner scanner = new Scanner(System.in);
 
-        int nota = scanner.nextInt();
+        System.out.println("Digite a primeira nota do aluno: ");
+        double nota1 = scanner.nextDouble();
 
-        if (nota > 6){
-            System.out.println("Aluno Aprovado ! ");
-        }
-        else if (nota >= 4 && nota <=6)
-        System.out.println("Aluno deve Verificar Suplementar");
-        else{
-            System.out.println("Aluno Reprovado");
-        }
+        System.out.println("Digite a segunda nota do aluno: ");
+        double nota2 = scanner.nextDouble();
+
+        double media = calculaMedia(nota1, nota2);
+        String status = verificarStatus(media);
+
+        System.out.printf("Média do aluno: %.2f\n", media);
+        System.out.println("Status: " + status);
+
         scanner.close();
+    }
+    public static double calculaMedia(double nota1, double nota2){
+        return  (nota1 + nota2) / 2;
+    }
+
+    public static String verificarStatus(double media){
+        if (media >6){
+            return "Aprovado";
+        } else if (media >= 4 && media <= 6){
+            return "Verificar Suplementar";
+        }
+        else {
+            return "Reprovado";
+        }
+    }
+
+
+
 
     }
-}
+
