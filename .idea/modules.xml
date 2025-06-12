@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/Etapa-04.iml" filepath="$PROJECT_DIR$/Etapa-04.iml" />
+=======
+      <module fileurl="file://$PROJECT_DIR$/HorasMinutosSegundos.iml" filepath="$PROJECT_DIR$/HorasMinutosSegundos.iml" />
+>>>>>>> cabae70 (Feat: Adicionar Exercicio 14 Tempo Covertido)
     </modules>
   </component>
 </project>
