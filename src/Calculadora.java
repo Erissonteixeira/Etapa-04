@@ -2,49 +2,51 @@ import java.util.Scanner;
 
 public class Calculadora {
 
-    public static double somar(double a, double b){
+    // Métodos estáticos
+    public static double somar(double a, double b) {
         return a + b;
     }
 
-    public static double subtrair(double a, double b){
+    public static double subtrair(double a, double b) {
         return a - b;
     }
 
-    public static double multiplicar(double a, double b){
+    public static double multiplicar(double a, double b) {
         return a * b;
     }
 
-    public static double dividir(double a, double b){
-        if (b == 0){
-            System.out.println("Erro: divisão por zero não é permitida.");
-            return Double.NaN;
+    public static double dividir(double a, double b) {
+        if (b == 0) {
+            System.out.println("Erro: divisão por zero!");
+            return 0;
         }
         return a / b;
     }
 
-    public static double potencia(double base, double expoente){
+    public static double potencia(double base, double expoente) {
         return Math.pow(base, expoente);
     }
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Digite o primeiro número:");
-        double num1 = scanner.nextDouble();
-
-        System.out.println("Digite o segundo número:");
-        double num2 = scanner.nextDouble();
-
+        System.out.println("=== CALCULADORA ===");
         System.out.println("Escolha a operação:");
-        System.out.println("1 - Somar");
-        System.out.println("2 - Subtrair");
-        System.out.println("3 - Multiplicar");
-        System.out.println("4 - Dividir");
+        System.out.println("1 - Soma");
+        System.out.println("2 - Subtração");
+        System.out.println("3 - Multiplicação");
+        System.out.println("4 - Divisão");
         System.out.println("5 - Potenciação");
-
+        System.out.print("Opção: ");
         int opcao = scanner.nextInt();
 
-        double resultado;
+        System.out.print("Digite o primeiro número: ");
+        double num1 = scanner.nextDouble();
+
+        System.out.print("Digite o segundo número: ");
+        double num2 = scanner.nextDouble();
+
+        double resultado = 0;
 
         switch (opcao) {
             case 1:
@@ -64,11 +66,9 @@ public class Calculadora {
                 break;
             default:
                 System.out.println("Opção inválida!");
-                scanner.close();
                 return;
         }
 
         System.out.println("Resultado: " + resultado);
-        scanner.close();
     }
 }
